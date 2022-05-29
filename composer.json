@@ -1,0 +1,50 @@
+{
+  "name": "lujihong/huawei-obs",
+  "description": "基于华为云官方最新 OBS PHP SDK v3.21.6 适用于hyperf等框架",
+  "license": "Apache-2.0",
+  "require": {
+    "php": ">=7.4.0",
+    "guzzlehttp/guzzle": "^7.0",
+    "guzzlehttp/psr7": "^2.1",
+    "guzzlehttp/promises": "^1.5",
+    "psr/http-message": "^1.0.1",
+    "league/flysystem": "^1.0|^2.0",
+    "monolog/monolog": "^1.22 || ^2.0",
+    "psr/log": "^1.1 || ^2.0 || ^3.0"
+  },
+  "suggest": {
+    "ext-swoole": "required to be used in swoole environment",
+    "hyperf/guzzle": "required to be used in swoole environment",
+    "hyperf/filesystem": "required to be used in hyperf"
+  },
+  "keywords": [
+    "obs",
+    "php",
+    "hyperf",
+    "huawei",
+    "swoole",
+    "filesystems",
+    "storage"
+  ],
+  "autoload": {
+    "psr-4": {
+      "Obs\\": "src/"
+    }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "config": {
+    "optimize-autoloader": true,
+    "sort-packages": true
+  },
+  "scripts": {
+    "test": "phpunit -c phpunit.xml --colors=always",
+    "analyse": "phpstan analyse --memory-limit 1024M -l 0 ./src",
+    "cs-fix": "php-cs-fixer fix $1"
+  },
+  "extra": {
+    "hyperf": {
+      "config": "Obs\\ConfigProvider"
+    }
+  }
+}
